@@ -1,16 +1,18 @@
 Feature: Math operations
 
-  Background:
-    Given number is 10
-
-  Scenario: Can subtraction two numbers from one
-
-    When I subtract following four numbers
-      |3|2|3|1|
 
 
+  Scenario Outline: Can subtraction two numbers from one
+
+    Given number is <number1>
 
 
+    When I subtract <number2>
 
-    Then I get 1 expected
+    Then I get <expected> result
+    Examples:
+      |number1|number2|expected|
+      |3      |2      |1       |
+      |100    |90     |10      |
+      |2      |10     |-8      |
 

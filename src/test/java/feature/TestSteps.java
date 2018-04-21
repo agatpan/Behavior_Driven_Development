@@ -25,21 +25,23 @@ public class TestSteps {
         this.initial = initial;
     }
 
-    @When("^I subtract following four numbers$")
+   /* @When("^I subtract (-?\\d+) $")
     public void substractList(List<Integer> numbers) {
 
         for (Integer number : numbers){
             this.initial -= number;
+
+
         }
-    }
-
-
-    /*@When("^I subtract  (-?\\d+)$")
-    public void i_subtract(int number) {
-        this.initial -= number;
     }*/
 
-    @Then("^I get (-?\\d+) expected$")
+
+    @When("^I subtract (-?\\d+)$")
+    public void i_subtract(int number) {
+        this.initial -= number;
+    }
+
+    @Then("^I get (-?\\d+) result$")
     public void resultOperation(int expected) {
         // Write code here that turns the phrase above into concrete actions
         assertThat(initial, equalTo(expected));
